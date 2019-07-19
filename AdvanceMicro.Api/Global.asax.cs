@@ -9,6 +9,8 @@ using System.Web.Routing;
 
 namespace AdvanceMicro.Api
 {
+    using Services;
+
     public class WebApiApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -18,6 +20,7 @@ namespace AdvanceMicro.Api
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Load.CoreDbCString = Properties.Settings.Default.CoreDB;
         }
     }
 }
